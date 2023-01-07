@@ -7,11 +7,17 @@ import './Hero.css'
 
 function Hero(){
 
-    const [idNumber, setIdNumber] = useState();
+    // ID number
+    const [idNumber, setIdNumber] = useState('');
+    // Api State
     const [api, setApi] = useState([])
+   
+    // current page number
     const [currentPage, setCurrentPage] = useState(1)
+    // How many items appear on page
     const [postPerPage, setPostPerPage] = useState(5)
 
+    // Previous and next page function
 
     const previousPage = () => {
         
@@ -27,7 +33,7 @@ function Hero(){
         }
     }
 
-
+// Fetch data from Api
 
   useEffect(() => {
     fetch("https://reqres.in/api/products")
@@ -35,15 +41,14 @@ function Hero(){
     .then(data => setApi(data.data))
 }, [])
 
-
+// Input handler
 
 const handleChange = (e) => {
     const value = e.target.value.replace(/\D/g, "");
     setIdNumber(value);
-    console.log(idNumber)
   };
   
-  
+  // Mapping over Api Data
   
   const newArray = api.map(item => {
     if(idNumber === undefined || idNumber === '') {
@@ -64,7 +69,8 @@ const handleChange = (e) => {
               id={item.id}
               year={item.year}
             />
-        } })
+        }})
+        
 
     const lastPostIndex = currentPage * postPerPage;
     const firstPostIndex = lastPostIndex - postPerPage
@@ -87,6 +93,7 @@ const handleChange = (e) => {
                     </div>
                 </div>
                 {idNumber === '' ? currentPost : newArray}
+                
             </div>
             <Pagination 
                 currentPage={currentPage}

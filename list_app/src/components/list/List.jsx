@@ -5,19 +5,23 @@ import closeIcon from '../images/close.png'
 
 function List(props) {
 
+  // Modal state
+
     const [modal, setModal] = useState(false);
     
-
-   
+  // Toggle modal function
 
     const toggleModal = () => {
       setModal(!modal);
     };
 
+  // Styles for background  
 
     const styles = {
         background: props.color
     }
+
+  // Font color in modal
 
     const stylesModal = {
       color: props.color
@@ -28,6 +32,7 @@ function List(props) {
       } else {
         document.body.classList.remove('active-modal')
       }
+      
     return(
     <div   className="list-table">
         <div style={styles} className="list-container">

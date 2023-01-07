@@ -6,10 +6,6 @@ import arrowRight from "../images/arrow-right.png"
 
 function Pagination(props) {
 
-
-   
-
-
     return(
 
         <div className="pagination">
