@@ -1,0 +1,123 @@
+.list-container {
+    width: 100%;
+    height: 4rem;
+    cursor: pointer;
+}
+
+.list-info {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.list-id {
+    font-size: 1.3rem;
+    width: 25%;
+}
+
+.list-name {
+    font-size: 1.3rem;
+    width: 50%;
+}
+
+.list-year {
+    font-size: 1.3rem;
+    width: 25%;
+}
+
+
+body.active-modal {
+    overflow-y: hidden;
+    
+}
+
+
+.modal, .overlay {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    animation-name: showModal;
+    animation-duration: 0.3s;
+    animation-direction:alternate;
+
+}
+
+.overlay {
+    background: rgba(21, 21, 21, 0.879)
+}
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.4;
+    background: #141414;
+    border: 5px solid white;
+    padding: 14px 28px;
+    border-radius: 3px;
+    height: 60%;
+    width: 40%; 
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    color: white;
+    
+}
+
+.modal-header {
+    margin-top: 20px;
+    font-size: 1.3rem;
+    height: 10%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-info-modal {
+    height: 85%;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.modal-info {
+    margin: 10px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+}
+
+.close-modal-icon {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+    .modal-content {
+        height: 100%;
+        width: 100%;
+    }
+  }
+
+@keyframes showModal {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+  @keyframes closeModal {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+  
