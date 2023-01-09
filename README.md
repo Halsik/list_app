@@ -8,9 +8,9 @@ Product List App
 
 # Screenshots of application
 
-![This is an image](list_application/src/components/images/list_app1.png)
+![This is an image](list_app/src/components/images/list_app1.png)
 
-![This is an image](list_application/src/components/images/list_app2.png)
+![This is an image](list_app/src/components/images/list_app2.png)
 
 # Technologies
 
