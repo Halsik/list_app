@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import List from "../list/List";
 import Pagination from "../Pagination/Pagination";
+import noResultIcon from "../images/no-result.png"
 
 import './Hero.css'
 
@@ -75,6 +76,10 @@ const handleChange = (e) => {
     const lastPostIndex = currentPage * postPerPage;
     const firstPostIndex = lastPostIndex - postPerPage
     const currentPost = newArray.slice(firstPostIndex, lastPostIndex)
+
+    const errorStyles = {
+        display: idNumber > api.length ? "flex" : "none"
+    }
   
 
     return(
@@ -83,6 +88,7 @@ const handleChange = (e) => {
             <div className="hero-table">
                 <div className="table-header">
                     <div className="table-id">
+                        
                         <p className="table-text">ID</p>
                     </div>
                     <div className="table-name">
@@ -93,6 +99,10 @@ const handleChange = (e) => {
                     </div>
                 </div>
                 {idNumber === '' ? currentPost : newArray}
+                <div style={errorStyles} className="error">
+                        <h1 className="error-message">{idNumber > api.length ? "No Record" : ''}</h1>
+                        <img src={noResultIcon}/>
+                </div>
                 
             </div>
             <Pagination 

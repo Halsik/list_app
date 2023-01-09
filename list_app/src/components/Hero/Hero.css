@@ -1,8 +1,9 @@
 .hero-container {
-    height: 75%;
+    height: 80%;
     display: flex;
     align-items: center;
     flex-direction: column;
+    justify-content: center;
 }
 
 .hero-input {
@@ -67,10 +68,31 @@
     border-top-right-radius: 30px;
 }
 
+.error {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+}
+
+.error-message {
+    font-size: 2.5rem;
+    margin: 20px;
+}
+
+
+
 @media screen and (max-width: 800px) {
     .hero-table {
         width: 95%;
         height: 95%;
+    }
+
+    .hero-container  {
+        height: 80%;
     }
   }
 
